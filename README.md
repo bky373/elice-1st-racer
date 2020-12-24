@@ -25,5 +25,4 @@
 
 
 
-- 커리큘럼의 모든 저작권은 엘리스에 속해 있습니다.
-  **COPYRIGHT 2020. ELICE ALL RIGHTS RESERVED.**
+※ 엘리스가 제공한 학습 자료, 콘텐츠의 저작권은 엘리스에 있습니다. **COPYRIGHT 2020. ELICE ALL RIGHTS RESERVED.**
