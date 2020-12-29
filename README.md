@@ -9,7 +9,7 @@
 
 |         주차         |                          학습 내용                           |                             관련                             |
 | :------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-| 1<br />(12.22-12.26) | 웹 프로그래밍 기초 (HTML / CSS / Javascript / JQuery) <br />기초 웹페이지-1 [(엘리스 아카데미)]()<br />기초 웹페이지-2 [(엘리스 크로켓 대회)]()<br />[모바일 웹페이지]()<br /> [자기소개 웹페이지](http://bky373.kdt-gitlab.elice.io/about-me/) 제작 | [GitHub](https://github.com/bky373/elice-1st-racer/tree/master/week01/WEB)&nbsp; [GitLab](https://kdt-gitlab.elice.io/bky373/about-me) |
+| 1<br />(12.22-12.26) | 웹 프로그래밍 기초 (HTML / CSS / Javascript / JQuery) <br />기초 웹페이지-1 [(엘리스 아카데미)]()<br />기초 웹페이지-2 [(엘리스 크로켓 대회)]()<br />[모바일 웹페이지]()<br /> [자기소개 웹페이지](http://bky373.kdt-gitlab.elice.io/about-me/) 제작 | [GitHub](https://github.com/bky373/elice-1st-racer/tree/master/week01/WEB)&nbsp; [GitLab](https://kdt-gitlab.elice.io/bky373/clone-pages) |
 
 
 
