@@ -1,0 +1,411 @@
+/* Default CSS */
+
+@import url(//spoqa.github.io//spoqa-han-sans/css/SpoqaHanSans-kr.css);
+
+
+* {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+img {
+    vertical-align: top;
+    border: none;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+a,
+label {
+    font-family: "Spoqa Han Sans", sans-serif;
+}
+
+.clearfix {
+    clear: both;
+}
+
+
+
+
+/* index.html */
+#intro .fullBackground {
+    background-position: center center;
+    background-attachment: fixed;
+    block-size: cover;
+
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#intro .overlay {
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.55);
+}
+
+#intro .textWrap {
+    position: relative;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#intro .textWrap h1 {
+    margin-bottom: 16px;
+    color: #ffffff;
+    font-size: 35px;
+}
+
+#intro .textWrap a {
+    color: #ffffff;
+    font-size: 20px;
+    text-decoration: underline;
+    opacity: 0.7;
+}
+
+
+
+
+/* main.html */
+/* 메인 페이지 */
+/* 메인 상단 영역 CSS */
+#header {
+    position: fixed;
+
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    border-bottom: solid 1px #d4d4d4;
+
+    top: 0;
+    left: 0;
+
+    z-index: 9999;
+}
+
+#header .left {
+    position: absolute;
+
+    width: 25px;
+    height: 25px;
+
+    background: url('../img/main/nav.png');
+    background-size: 100%;
+
+    top: 12px;
+    left: 16px;
+
+    cursor: pointer;
+}
+
+#header .logo {
+    padding-top: 12px;
+    text-align: center;
+}
+
+#header .logo img {
+    height: 25px;
+}
+
+
+/* 메인 네비게이션 영역 CSS */
+#side_nav {
+    position: fixed;
+
+    width: 180px;
+    background-color: #ffffff;
+    border-right: solid 1px #d4d4d4;
+    box-shadow: 2px 0 15px #d4d4d4;
+
+    top: 0;
+    left: -200px;
+    bottom: 0;
+
+    z-index: 9999;
+}
+
+#side_nav .close {
+    width: 100%;
+    height: 50px;
+
+    border-bottom: solid 1px #d4d4d4;
+    box-shadow: 0 2px 15px #d4d4d4;
+
+    margin-bottom: 10px;
+    padding: 16px 16px 0 0;
+
+    text-align: right;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+#side_nav .close .close_btn {
+    cursor: pointer;
+}
+
+#side_nav ul li a {
+    display: inline-block;
+
+    width: 100%;
+
+    color: #151515;
+    padding: 15px 0 15px 20px;
+    font-weight: bold;
+}
+
+
+#main {
+    width: 100%;
+    padding-top: 50px;
+}
+
+/* 메인 인트로 영역 CSS */
+#main .main_intro {
+    width: 100%;
+    height: 250px;
+    background: url("../img/main/main_intro.jpg") no-repeat center;
+    background-size: cover;
+
+    line-height: 30px;
+    margin-bottom: 24px;
+    padding: 64px 32px 0 32px;
+}
+
+#main .main_intro h2 {
+    font-size: 32px;
+    color: white;
+    margin-bottom: 24px;
+}
+
+#main .main_intro p {
+    font-size: 14px;
+    line-height: 22px;
+    color: white;
+    opacity: 0.7;
+}
+
+
+/* 메인 선수 리스트 영역 CSS */
+#main ul {
+    padding: 0 24px;
+}
+
+
+#main ul li {
+    margin-bottom: 16px;
+}
+
+#main ul article {
+    width: 100%;
+    border-bottom: solid 1px #d4d4d4;
+    box-shadow: 2px 2px 15px #d4d4d4;
+    padding-bottom: 16px;
+}
+
+#main ul article h2 {
+    background-color: #524fa1;
+    border-radius: 8px 8px 0 0;
+    padding: 20px 24px;
+    color: #ffffff
+}
+
+#main ul article img {
+    width: 100%;
+}
+
+#main ul article p {
+    padding: 12px 24px 8px 24px;
+    font-size: 18px;
+    color: #3ab6bc;
+    font-weight: bold;
+}
+
+#main ul article span {
+    margin-left: 24px;
+    font-family: 'Spoqa Han Sans';
+    color: #666666;
+}
+
+
+/* 메인 상세 페이지 */
+#header .back {
+    position: absolute;
+
+    width: 25px;
+    height: 25px;
+
+    background: url('../img/main_details/back_arrow.png');
+    background-size: 100%;
+
+    top: 12px;
+    left: 16px;
+
+    cursor: pointer;
+}
+
+
+/* 상세 페이지 이미지 슬라이드 코드 */
+#main #main_slider {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    margin-bottom: 40px;
+}
+
+#main #main_slider img {
+    height: 280px;
+}
+
+
+/* 상세 페이지 본문 영역  */
+#main section {
+    padding: 0 24px;
+}
+
+#main section h2 {
+    margin-bottom: 8px;
+    text-align: center;
+    font-size: 24px;
+}
+
+#main article {
+    margin-bottom: 40px;
+}
+
+#main article img {
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+#main article h3 {
+    margin: 8px 0;
+    font-size: 20px;
+}
+
+#main article p,
+#main #question p {
+    font-size: 15px;
+}
+
+#main #parallax {
+    width: 100%;
+    background: url(../img/main_details/parallax.png) no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+
+    padding: 50px 0;
+    margin-bottom: 20px;
+
+    text-align: center;
+    color: #ffffff;
+}
+
+#main #question p {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+
+
+
+
+/* 상세 페이지 본문 영역  */
+#question_form .form-group {
+    padding-bottom: 32px;
+}
+
+#question_form label {
+    display: block;
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+#question_form input,
+#question_form textarea {
+    display: block;
+
+    width: 100%;
+    height: 40px;
+
+    background-color: #fff;
+    border: solid 1px #ccc;
+
+    padding: 8px 12px;
+    font-style: 14px;
+}
+
+#question_form textarea {
+    height: 100px;
+}
+
+#question_form button {
+    width: 100%;
+    background-color: #564997;
+    border: solid 1px #ccc;
+    padding: 16px 0;
+
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+#question_form label.error {
+    margin-top: 5px;
+
+    color: red;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.bigScreen {
+    display: none;
+}
+
+/* 큰 가로 화면 영역 CSS */
+/* media query */
+@media screen and (min-width:600px) {
+    .bigScreen {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        background-color: rgb(77, 121, 204);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 9999;
+    }
+
+    .bigScreen .notice {
+        color: #ffffff;
+        font-size: 21px;
+    }
+}

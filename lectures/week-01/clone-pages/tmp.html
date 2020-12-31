@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>엘리스 실습 페이지</title>
+
+    <style>
+        * {
+            margin: 0;
+            height: 0;
+
+            box-sizing: border-box;
+        }
+
+        img {
+            vertical-align: middle;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000000;
+        }
+
+        ol,
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        #intro {
+            width: 100%;
+            height: 80px;
+        }
+
+        #intro h1 {
+            float: left;
+            width: 50%;
+            height: 80px;
+            background-color: #fbfbfb;
+        }
+
+        #intro h1 a {
+            display: block;
+            padding: 22px 0 0 30px;
+            font-size: 30px;
+        }
+
+        #intro nav {
+            float: right;
+            width: 50%;
+            height: 80px;
+        }
+
+        #intro nav ul li {
+            width: 33.33333%;
+            height: 80px;
+            float: left;
+            text-align: center;
+            line-height: 80px;
+        }
+
+        #main {
+            float: left;
+            width: 50px;
+            height: 320px;
+            background-color: pink;
+        }
+
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header id="intro">
+            <h1>
+                <a href="#" target="_blank">엘리스 아카데미</a>
+            </h1>
+            <nav>
+                <ul>
+                    <li class="one"><a href="#">캐릭터 소개</a></li>
+                    <li class="two"><a href="#">줄거리</a></li>
+                    <li class="three"><a href="#">부록</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main id="main">
+            <article class="one">
+                <a href="#">
+                    <img src="public/img1.png" alt="">
+                    <h2>하얀토끼</h2>
+                </a>
+            </article>
+        </main>
+    </div>
+</body>
+
+</html>

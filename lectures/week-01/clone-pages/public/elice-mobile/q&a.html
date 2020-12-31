@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>엘리스 | Q&A</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="left"></div>
+        <h1 class="logo">
+            <a href="main.html">
+                <img src="img/main/logo.png" alt="">
+            </a>
+        </h1>
+    </header>
+
+    <nav id="side_nav">
+        <div class="close">
+            <span class="close_btn">X</span>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <ul>
+            <li><a href="#">NEWS</a></li>
+            <li><a href="#">PLAYERS</a></li>
+            <li><a href="#">GAME</a></li>
+            <li><a href="#">TICKETS</a></li>
+            <li><a href="#">Q & A</a></li>
+        </ul>
+    </nav>
+
+    <main id="main" role="main">
+
+        <article class="main_intro">
+            <div class="text_wrap">
+                <h2>Q & A</h2>
+                <p>안녕하세요. 엘리스 Q&A입니다.<br>
+                    질문내용과 연락처를 함께 남겨주시면<br>
+                    3일이내에 답변을 받을 수 있습니다.<br>
+                </p>
+            </div>
+        </article>
+
+        <section id="question">
+            <form id="question_form">
+                <div class="form-group">
+                    <label for="topic">제목</label>
+                    <input type="text" id="topic" name="topic" required minlength="5">
+                </div>
+                <div class="form-group">
+                    <label for="email">이메일 주소</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">내용</label>
+                    <textarea name="message" id="message" required minlength="20"></textarea>
+                </div>
+                <div class="form-group">
+                    <button type="submit">문의하기</button>
+                </div>
+        </section>
+    </main>
+
+    <div class="bigScreen">
+        <h1 class="notice">가로 너비를 조금 줄여주세요😅</h1>
+    </div>
+
+    <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/nav.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <script>
+        $("#question_form").validate();
+        $.extend($.validator.messages, {
+            required: "필수 항목입니다.",
+            email: "유효하지 않은 E-Mail 주소입니다.",
+            minLength: $.validator.format("{0}자 이상 입력하세요.")
+        });
+    </script>
+
+
+</body>
+
+</html>
