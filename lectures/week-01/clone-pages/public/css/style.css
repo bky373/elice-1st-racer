@@ -1,0 +1,94 @@
+/* COMMON */
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500&display=swap');
+
+.body__container {
+    font-family: 'Noto Sans KR', sans-serif;
+
+    font-size: 16px;
+    font-weight: 400;
+    color: #333333;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* FLOAT CLEARFIX */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.float--left {
+    float: left;
+}
+
+.float--right {
+    float: right;
+}
+
+/* SECTION & INNER  */
+.section {
+    position: relative;
+}
+
+.section .inner {
+    max-width: 1024px;
+    margin: 0 auto;
+    position: relative;
+    box-sizing: border-box;
+}
+
+/* HEADER */
+header {
+    border-bottom: 1px solid #949494bf;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .75);
+    background: #FFF;
+}
+
+header .inner {
+    height: 76px;
+}
+
+header .intro-group {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+header .intro-group a {
+    font-size: 19px;
+    font-weight: 500;
+    color: #474747;
+    padding-left: 22px;
+    box-sizing: border-box;
+}
+
+header .intro-group a:hover {
+    color: #bc8f8f;
+}
+
+header .menu-group {
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+header .menu-group .menu-list {
+    display: flex;
+    margin-right: 60px;
+}
+
+header .menu-group li a {
+    padding: 17px;
+    display: block;
+    font-size: 17px;
+    color: #535353;
+    box-sizing: border-box;
+}
+
+header .menu-group li a:hover {
+    color: #bc8f8f;
+}
