@@ -327,7 +327,8 @@ header .sub-menu li a:hover {
     max-width: 1200px;
 }
 
-/* grid-tiles
+/* GRID-TILES */
+/*
 .section--feature .tiles ul {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
