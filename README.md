@@ -11,7 +11,7 @@
 | :------------------: | :----------------------------------------------------------- | :----------------------------------------------------------: |
 | 1<br />(12.22-12.26) | **웹 프로그래밍** 기초 (**HTML**/ **CSS** / **Javascript** / **JQuery**) <br />🌐 기초 웹페이지-1 [(엘리스 아카데미)](http://bky373.kdt-gitlab.elice.io/clone-pages/elice/elice-index.html)<br />🌐 기초 웹페이지-2 [(엘리스 크로켓 대회)](http://bky373.kdt-gitlab.elice.io/clone-pages/elice-krocket/krocket-index.html)<br />📱 [모바일 웹페이지](http://bky373.kdt-gitlab.elice.io/clone-pages/elice-mobile/index.html)<br />🙋‍♂️ [자기소개 웹페이지](http://bky373.kdt-gitlab.elice.io/about-me/) 제작 | [My Clone Pages](http://bky373.kdt-gitlab.elice.io/clone-pages/index.html) <br/><br /> [GitHub](https://github.com/bky373/clone-pages)&nbsp;&nbsp;&nbsp; [GitLab](https://kdt-gitlab.elice.io/bky373/clone-pages) |
 | 2<br />(12.27-01.02) | **Git**을 사용한 버전 관리 / **GitLab** 실습 / **리눅스** 기초 |  [GitLab](https://kdt-gitlab.elice.io/bky373/test-project)   |
-| 3<br />(01.03-01.09) | **데이터베이스** 기초<br />- **데이터 모델링** / **정규화**<br />- **SQL** 문법 (DML / DCL / DDL)<br />- **MySQL** / MySQL-Workbench |                              -                               |
+| 3<br />(01.03-01.09) | **데이터베이스** 기초<br />- **데이터 모델링** / **정규화**<br />- **SQL** 문법 (DML / DCL / DDL)<br />- **MySQL** / MySQL-Workbench | [GitLab](https://kdt-gitlab.elice.io/bky373/elice-track-1st) |
 
 
 
