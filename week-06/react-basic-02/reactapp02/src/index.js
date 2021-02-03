@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 
-/* [01 Props] 실습 */
+/* [02 State & 생명주기] 실습 */
 
 
 /* [실습1] 컴포넌트 합성 */
