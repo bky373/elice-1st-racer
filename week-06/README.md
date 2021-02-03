@@ -13,15 +13,46 @@
 #### 기본 개념
 
 - **Node.js**: Node.js® is a JavaScript runtime built on [Chrome's V8 JavaScript engine](https://v8.dev/). ([공식 페이지](https://nodejs.org/en/) 설명), 즉 JavaScript 기반으로 구성된 서버 사이드 서비스를 JavaScript로 구현할 수 있게 만든 런타임 ([참고](https://kdydesign.github.io/2017/07/15/nodejs-npm-tutorial/))
+
 - **npm** (node package manager or modules): Node.js의 패키지 생태계이자 세계에서 가장 큰 오픈 소스 라이브러리 생태계
+
   - npm은 node.js를 설치하면 같이 설치된다. 
+
 - **JSX** (JavaScript XML): 자바스크립트를 확장한 문법이다. 참고로 XML은 HTML의 한계를 극복하고자 만든 마크업 언어이다. 결국 종합적으로 JSX는 React에서 사용되는 **자바스크립트 확장판 문법이고 동시에 HTML의 한계를 극복하는 문법**으로 이해하면 된다. 문법 설명은 [여기](https://ko.reactjs.org/docs/introducing-jsx.html)로
+
 - **Element**: React 앱의 가장 작은 단위이자 컴포넌트의 구성 요소 (쉽게 HTML 요소), 한 번 생성되면 수정이 불가능한 **불변 객체**이기 때문에 값을 변경하고 싶으면 새로운 엘리먼트를 만들어 업데이트 해야 한다
+
 - **DOM(Document Object Model)**: HTML요소들을 노드로 포함하는 트리와 같은 구조
+
 - **CDN(Contents Delivery Network)**:  지리적 물리적으로 떨어져 있는 사용자에게 컨텐츠 제공자의 컨텐츠를 더 빠르게 제공할 수 있는 기술
+
 - **Component**: 앱의 기능을 단위별로 캡슐화하는 React의 기본 단위, 독립적이고 **재사용 가능한 코드 조각** (쉽게 HTML 요소를 반환하는 함수와 같다), 종류로는 함수형 컴포넌트와 클래스형 컴포넌트가 있다
+
 - **Props**: 컴포넌트로 값을 전달하기 위한 매개변수
-- **State**: Props처럼 컴포넌트의 렌더링 결과물에 영향을 주는 데이터를 갖고 있는 객체, 다만 `Props`는 함수의 매개변수처럼 사용되는 것이고 `State`는 함수 내에 선언된 변수처럼 사용되는 것, **`Props`는 읽기 전용으로 수정이 불가능하고, `State`는 원하는 경우 수정이 가능 **
+
+- **State**: Props처럼 컴포넌트의 렌더링 결과물에 영향을 주는 데이터를 갖고 있는 객체, 다만 `Props`는 함수의 매개변수처럼 사용되는 것이고 `State`는 함수 내에 선언된 변수처럼 사용되는 것, **`Props`는 읽기 전용으로 수정이 불가능하고, `State`는 원하는 경우 수정이 가능 ****
+
+- **Controlled Component(제어 컴포넌트)**:  사용자가 state를 제어할 수 있는 컴포넌트로, HTML에서 사용하는 폼 엘리먼트 `<input>`, `<select>`, `<textarea>`등을 Controlled Component를 통해 React에서도 동일하게 구현할 수 있다
+
+- **Hook**: 함수형 컴포넌트에서도 클래스형 컴포넌트의 기능을 사용할 수 있게 하는 기능/ 즉, 함수형 컴포넌트에서 React state와 생명주기 기능(lifecycle features)을 **연동(hook into)** 할 수 있게 해주는 것이 바로 Hook
+
+  - State Hook의 사용: `const [<상태 값 저장 변수>, <상태 값 갱신 함수>] = userState(<상태 초깃값>);`
+
+  - Effect Hook의 사용: (예) `useEffect() => {  documen.title = 'You checked ${count} times'; });`
+
+    - 함수형 컴포넌트에서 side effects들을 수행한다
+    - 생명주기 메소드를 구현할 필요 없이 함수형 컴포넌트에서 side effects들을 실행할 수 있게 해준다
+    - side effects(또는 effects): React 컴포넌트 안에서 데이터를 가져오거나 구독하고, DOM을 직접 조작하는 작업 
+
+  - **Hook의 규칙**: 
+
+    - 1. 최상위(at the Top Level)에서만 Hook을 호출해야 한다
+
+         - 반복문(while), 조건문 (if) 혹은 중첩된 함수 내에 Hook을 호출하면 안 됨
+
+      2. 오직 React 함수 내에서 Hook을 호출해야 한다
+
+         
 
 #### React 실습환경 구축
 
