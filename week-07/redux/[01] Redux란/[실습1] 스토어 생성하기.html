@@ -1,0 +1,64 @@
+<!-- html에 코드에 redux를 작동하게 하는 라이브러리 script를 첨부한 환경에서 실행할 것 -->
+<!-- 라이브러리 script: https://cdnjs.com/libraries/redux -->
+
+<html>
+
+<head>
+    <script src="rdx.js"></script>
+</head>
+
+<body>
+    <style>
+        .container {
+            border: 5px solid black;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        body {
+            margin: 1rem;
+        }
+    </style>
+
+    <h1>Store 생성하기</h1>
+    <div id="red"></div>
+    <script>
+        {
+            /*reducer 함수를 만드세요. 그 안에 컨테이너 색을 바꾸는 리듀서를 작성하세요.*/
+        }
+
+        function reducer(state, action) {
+            // console.log(state);
+            if (state === undefined) {
+                return {
+                    color: 'black'
+                }
+            }
+        } {
+            /* store를 생성하세요.*/
+        }
+        const store = Redux.createStore(reducer);
+
+        function red() {
+            {
+                /*console에 state초기값을 확인하세요.*/
+            }
+            var state = store.getState();
+            //   console.log(store.getState());
+
+            document.querySelector('#red').innerHTML = `
+<div class="container" id="component_red" style="background-color:yellow">
+    <h1>red</h1>
+    <input type="button" value="fire" onclick="
+    document.querySelector('#component_red').style.backgroundColor = 'red';
+    document.querySelector('#component_green').style.backgroundColor = 'red';
+    document.querySelector('#component_blue').style.backgroundColor = 'red';
+    ">
+</div>
+    `;
+        }
+        red();
+    </script>
+</body>
+
+</html>
