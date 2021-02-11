@@ -1,4 +1,4 @@
-  ## React Basic
+  ## React 학습내용 정리
 
   #### React를 왜 이용해야 하나 
 
