@@ -27,3 +27,8 @@ pip-selfcheck.json
 # End of https://www.toptal.com/developers/gitignore/api/vscode
 .vscode
 week-01/.vscode
+public
+src/
+!src/App.js
+package-lock.json
+package.json
