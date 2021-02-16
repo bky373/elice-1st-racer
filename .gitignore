@@ -28,7 +28,5 @@ pip-selfcheck.json
 .vscode
 week-01/.vscode
 public
-src/
-!src/App.js
 package-lock.json
 package.json
