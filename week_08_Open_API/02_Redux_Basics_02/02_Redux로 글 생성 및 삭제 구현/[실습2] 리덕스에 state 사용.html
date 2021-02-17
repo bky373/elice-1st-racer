@@ -1,0 +1,78 @@
+<!--
+    index.html 코드
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+        <script src="rdx.js"></script>
+    </head>
+    <body>
+        <div id="subject"></div>
+        <div id="toc"></div>
+        <div id="control"></div>
+        <div id="content"></div>    
+        <script>
+function subject(){
+    document.querySelector('#subject').innerHTML = `
+    <header>
+        <h1>Redux</h1>
+        Hello, Redux!
+    </header>
+    `
+}
+function TOC(){
+  var state = store.getState();
+ 
+    var i = 0;
+    var liTags = '';
+    while(i<state.contents.length){
+    //  1. <li> </li> 내에 글목록을 스토어에 있는 정보를 바탕으로 가져오는 state를 가져오세요.
+        liTags = liTags + `
+            <li>
+              <a href="${state.contents[i].id}">${state.contents[i].title}</a>
+            </li>`;
+        i = i + 1;
+    }
+    document.querySelector('#toc').innerHTML = `
+    <nav>
+        <ol>${liTags}</ol>
+    </nav>
+    `;
+}
+function control(){
+    document.querySelector('#control').innerHTML = `
+    <ul>
+        <li><a href="/create">create</a></li>
+        <li><input type="button" value="delete"></li>
+    </ul>
+    `;
+}
+function article(){
+    document.querySelector('#content').innerHTML = `
+    <article>
+        <h2>Redux</h2>
+        Redux is ...
+    </article>
+    `
+}
+
+
+function reducer(state, action){
+    if(state === undefined){
+        return {
+            contents:[
+                {id:1,title:'Redux',desc:'Redux is ..'},
+                {id:2,title:'React-Redux', desc:'React-Redux is ..'}
+            ]
+        }
+    }
+}
+var store = Redux.createStore(reducer);
+subject();
+TOC();
+control();
+article();
+        </script>
+
+    </body>
+</html> 

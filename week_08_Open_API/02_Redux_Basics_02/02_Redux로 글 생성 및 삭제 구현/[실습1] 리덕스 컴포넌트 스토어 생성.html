@@ -1,0 +1,99 @@
+<!--
+    index.html 코드
+-->
+<!DOCTYPE html>
+<html>
+  <head>
+        <script src="rdx.js"></script>
+    </head>
+    <body>
+        <header>
+            <h1>Redux</h1>
+            Hello, Redux
+        </header>
+        <nav>
+            <ol>
+                <li><a href="1.html">Redux</a></li>
+                <li><a href="2.html">React-Redux</a></li>
+            </ol>
+        </nav>
+        <article>
+            <ul>
+                <li><a href="/create">create</a></li>
+                <li><input type="button" value="delete"></li>
+            </ul>
+            <h2>Redux</h2>
+            Redux is ...
+        </article>
+        <div id="subject"></div>
+        <div id="toc"></div>
+        <div id="control"></div>
+        <div id="content"></div>    
+        <script>
+function subject(){
+    document.querySelector('#subject').innerHTML = `
+    <header>
+        <h1>Redux</h1>
+        Hello, Redux!
+    </header>
+    `
+}
+function TOC(){
+     var state = store.getState();
+    var i = 0;
+    var liTags = '';
+    while(i<state.contents.length){
+        liTags = liTags + `
+            <li>
+                <a href="${state.contents[i].id}">${state.contents[i].title}</a>
+            </li>`;
+        i = i + 1;
+    }
+    document.querySelector('#toc').innerHTML = `
+    <nav>
+        <ol>${liTags}</ol>
+    </nav>
+    `;
+}
+function control(){
+    document.querySelector('#control').innerHTML = `
+    <ul>
+        <li><a href="/create">create</a></li>
+        <li><input type="button" value="delete"></li>
+    </ul>
+    `;
+}
+function article(){
+    document.querySelector('#content').innerHTML = `
+    <article>
+        <h2>Redux</h2>
+        Redux is ...
+    </article>
+    `
+}
+/* 
+1. 리듀서를 생성한 다음 그 리듀서를 받는 스토어를 생성하세요.
+*/
+function reducer(state, action){
+    if(state === undefined){
+        return {
+            contents:[
+                {id:1,title:'Redux',desc:'Redux is ..'},
+                {id:2,title:'React-Redux', desc:'React-Redux is ..'}
+            ]
+        }
+    }
+}
+
+/*
+2.function reducer를 작성한 다음엔 state가 undefined일 경우, 
+다음과 같은 내용을 content 내에 반환하세요.
+*/
+var store = Redux.createStore(reducer);
+subject();
+TOC(); //입력된 개체를 화면에 표시
+control();
+article();
+        </script>
+    </body>
+</html> 
