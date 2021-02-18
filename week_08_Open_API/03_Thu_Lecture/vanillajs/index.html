@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<title>Egoing님과 공부중!!</title>
+
+<body>
+    <header>
+        <h1><a href="#">WEB</a></h1>
+    </header>
+    <nav>
+        <ol id="nav">
+            <li><a href="/1">html</a></li>
+            <li><a href="/2">css</a></li>
+            <li><a href="/3">js</a></li>
+        </ol>
+    </nav>
+    <article id="article">
+        <h2>Welcome</h2>
+        hi, WEB
+    </article>
+</body>
+<script type="text/javascript">
+    const api_url = 'https://myg1tiyijilc2gb4afskybuztvtkvaqo.runner-forwarder-a-02.elice.io/'
+
+    function $(selector) {
+        return document.querySelector(selector);
+    }
+
+    function clog(msg) {
+        console.log(msg);
+    }
+
+    function get(url, callback) {
+        fetch(url)
+            .then(type => type.json())
+            .then(result => callback(result))
+    }
+
+    function navClickHandler(topic_id) {
+        event.preventDefault();
+        get(api_url + 'topics/' + topic_id, function (result) {
+            $('#article').innerHTML = `
+                    <h2>${result.title}</h2>
+                    ${result.description}
+                `;
+        });
+    }
+
+    fetch(api_url + 'topics')
+        .then(type => type.json())
+        .then((result) => {
+            let tags = '';
+            result.forEach(topic => tags += `<li>
+            <a 
+                onclick="navClickHandler(${topic.id});"
+                href="${topic.id}">
+                ${topic.title}
+            </a>
+        </li>`);
+            $('#nav').innerHTML = tags;
+        })
+</script>
+
+</html>
