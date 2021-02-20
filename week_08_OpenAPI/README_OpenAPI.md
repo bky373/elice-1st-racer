@@ -107,7 +107,7 @@ axios.patch(url, data 객체)
 ### 에러 해결 방법
 
 1. 백엔드에서 특정 도메인에 대한 CORS를 허용
-2.  [JSONP](https://ko.wikipedia.org/wiki/JSONP) : HTML의 `<script>` 태그는 보안 정책이 적용되지 않는다는 점을 이용하여 외부 자원을 JSON 형태로 변환해 데이터를 받아오는 방법
+2. [JSONP](https://ko.wikipedia.org/wiki/JSONP) : HTML의 `<script>` 태그는 보안 정책이 적용되지 않는다는 점을 이용하여 외부 자원을 JSON 형태로 변환해 데이터를 받아오는 방법
 3. [**프록시** ](https://ko.wikipedia.org/wiki/프록시_서버)**설정** : 서버와 사용자 간에 통신을 할 때 중계기 역할을 하는 것이 프록시 서버이다. API와 사용자 간에 프록시 설정을 하여 **서버의 자원을 프록시 서버에서 받아오고** 사용자에게는 **CORS가 허용된 것처럼 HTTP 요청을 허용해주는 것**이다. (즉, **프록시를 이용해** **서버에 대한 접근을 우회**한다.)
    - React 프로젝트에서 프록시 설정도 가능하지만, `https://cors-anywhere.herokuapp.com/`을 이용하면 CORS 프록시 설정을 간편하게 할 수 있다. 해당 주소 뒤에 사용할 API 주소를 이어 붙이기만 하면 되고, 사용 전, 위의 herokuapp url에 접속해 **회색 버튼 클릭**을 통해 기능을 활성화 해주면 된다! 
 
@@ -141,25 +141,81 @@ axios.patch(url, data 객체)
   - [실습4_dangerouslySetInnerHTML](https://github.com/bky373/elice-1st-racer/blob/master/week_08_OpenAPI/04_OpenAPI_Basics/02_OpenAPI_Usage/%EC%8B%A4%EC%8A%B54_dangerouslySetInnerHTML.js)
   - [실습5_상품 검색 기능 구현](https://github.com/bky373/elice-1st-racer/blob/master/week_08_OpenAPI/04_OpenAPI_Basics/02_OpenAPI_Usage/%EC%8B%A4%EC%8A%B55_%EC%83%81%ED%92%88%20%EA%B2%80%EC%83%89%20%EA%B8%B0%EB%8A%A5%20%EA%B5%AC%ED%98%84.js)
 
-  ## 참고할 부분
+## 비동기 처리
 
-  #### dangerouslySetInnerHTML ([공식 문서](https://ko.reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml))
+- 복잡한 비동기 처리를 하기 위해서 `.then`을 이용한 콜백 함수를 자주 사용하면 가독성이 나빠진다. (흔히 [콜백 지옥](https://librewiki.net/wiki/콜백_지옥) 이라고 표현한다.)
 
-  - `dangerouslySetInnerHTML`은 **브라우저 DOM에서 `innerHTML`을 사용하기 위한 React의 대체 방법**이다. 일반적으로 코드에서 HTML을 설정하는 것은 [사이트 간 스크립팅](https://ko.wikipedia.org/wiki/사이트_간_스크립팅) 공격에 쉽게 노출될 수 있기 때문에 위험하다. 
+  ```react
+  axios.get(`요청할 url 1`)
+    .then(res => axios.get(`요청할 url 2`))
+    .then(res => {
+      const ps = res.data.map(user => axios.get(`요청할 url 3`));
+      ···
+    })
+    .then(ress => ···)))
+    .then(repoArrs => {
+      ···
+      }
+      ···
+    })
+  ```
 
-  - 따라서 React에서 직접 HTML을 설정할 수는 있지만, **위험하다는 것을 상기시키기 위해** `dangerouslySetInnerHTML`을 작성하고 `__html` 키로 객체를 전달해야 합니다. 아래는 예시이다.
+- 콜백 지옥을 벗어나기 위해 **`async`**와 **`await`**를 이용할 수 있다. 즉, 콜백 함수와 `.then`을 사용하지 않고 비동기 처리를 할 수 있다.
 
-    ```react
-    function createMarkup() {
-      return {__html: 'First &middot; Second'};
-    }
-    
-    function MyComponent() {
-      return <div dangerouslySetInnerHTML={createMarkup()} />;
-    }
-    ```
+### Async / Await
 
-    
+- `async`와 `await`에 대해 살펴보기 전에 Promise가 무엇인지 알아보자. **Promise**란 **비동기 처리에서 사용되는 객체**로 Promise가 상태를 관리함으로써 다른 코드가 비동기적으로 실행될 수 있도록 해주는 객체이다. **Axios 역시 Promise를 기반으로** 만들어진 것이다. (Promise에 대한 자세한 설명은 [링크](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Promise)를 참고)
+
+- `async`와 `await`을 어떻게 사용해야 하는지 아래 예시를 통해 살펴보자.
+
+  ```react
+  // 2초 뒤 Promise 객체를 반환하는 resolveAfter2Seconds 함수와 
+  // 해당 함수를 호출하는 asyncCall 함수
+  // resolveAfter2Seconds에서는 2초 뒤에 Promise 객체를 반환한다.
+  // 여기서 resolve는 코드를 이행하는 것으로 resolved라는 문자열을 반환한다.
+  // 코드 실행 후 asyncCall에는 calling을 콘솔창에 출력한 뒤, 2초 후 resolved를 출력한다.
+  // async는 함수 이름 부분의 제일 앞에, await는 결과를 기다릴 함수 호출 부분 앞에 작성
+  
+  function resolveAfter2Seconds() {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve('resolved');
+      }, 2000);
+    });
+  }
+  
+  async function asyncCall() {
+    console.log('calling');
+    const result = await resolveAfter2Seconds();
+    console.log(result);
+  }
+  
+  asyncCall();
+  ```
+
+- **`async`**는 **해당 함수에서 비동기 처리를 위한 Promise 동작을 한다는 것을 명시**하는 것이고, **`await`**는 **호출되는 함수가 적절한 결과를 반환할 때까지 기다리도록 동작**한다. **실질적인 동작은 `await`**이고, **`awiat`을 사용하기 위해 `async`를 명시해야 한다**.
+
+
+
+## 참고할 부분
+
+#### dangerouslySetInnerHTML ([공식 문서](https://ko.reactjs.org/docs/dom-elements.html#dangerouslysetinnerhtml))
+
+- `dangerouslySetInnerHTML`은 **브라우저 DOM에서 `innerHTML`을 사용하기 위한 React의 대체 방법**이다. 일반적으로 코드에서 HTML을 설정하는 것은 [사이트 간 스크립팅](https://ko.wikipedia.org/wiki/사이트_간_스크립팅) 공격에 쉽게 노출될 수 있기 때문에 위험하다. 
+
+- 따라서 React에서 직접 HTML을 설정할 수는 있지만, **위험하다는 것을 상기시키기 위해** `dangerouslySetInnerHTML`을 작성하고 `__html` 키로 객체를 전달해야 합니다. 아래는 예시이다.
+
+  ```react
+  function createMarkup() {
+    return {__html: 'First &middot; Second'};
+  }
+  
+  function MyComponent() {
+    return <div dangerouslySetInnerHTML={createMarkup()} />;
+  }
+  ```
+
+
 
 <br />
 
