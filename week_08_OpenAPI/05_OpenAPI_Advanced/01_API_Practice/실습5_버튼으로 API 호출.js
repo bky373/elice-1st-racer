@@ -8,73 +8,45 @@
 /*
     Users.js 코드
 */
-import React, { useEffect, useReducer } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-// reducer() 함수를 완성하세요.
-function reducer(state, action) {
-    switch (action.type) {
-        case 'LOADING':
-            return {
-                
-                
-                
-            };
-        case 'SUCCESS':
-            return {
-                
-                
-                
-            };
-        case 'FAIL':
-            return {
-                
-                
-                
-            };
-        default:
-            throw new Error();
-    }
-}
-
-
 function Users() {
-    // useReducer를 선언하세요.
-    const [state, dispatch] = null;
+    const [users, setUsers] = useState([]);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(false);
     
-    async function fetchUser() {
-        try {
-            // dispatch를 이용해 state를 설정하는 코드입니다.
-            dispatch({ type: 'LOADING' });
-            const response = await axios.get(
-                'https://jsonplaceholder.typicode.com/users'
-            );
-            dispatch({ type: 'SUCCESS', data: response.data });
-        } catch (e) {
-            dispatch({ type: 'FAIL', error: e });
-        }
-    };
-    
+    // fetchUser() 함수를 useEffect 밖으로 분리하세요.
     useEffect(() => {
         fetchUser();
     }, []);
+
+    async function fetchUser() {
+      // 함수가 처음 시작할 때 loading state를 true, 끝날 때 false로 설정하세요.
+      setLoading(true);
+      try {
+          const response = await axios.get(
+              'https://jsonplaceholder.typicode.com/users'
+          );
+          setUsers(response.data);
+      } catch (e) {
+          setError(e);
+      }
+      setLoading(false);
+    }
     
-    // useReducer의 state를 불러오는 코드입니다.
-    const { loading, data, error } = state;
-    
-    if(loading)
-        return <h4>로딩중...</h4>;
-    if(error)
-        return <h4>에러 발생!</h4>;
-    
-    const userName = data.map(
+    const userName = users.map(
         (user) => (<li key={user.id}> {user.name} </li>)
     );
     
+    if(loading)
+        return <h4>로딩중...</h4>;
+    if (error) return <h4>에러 발생!</h4>;
     return (
         <>
             <h4>사용자 리스트</h4>
             <div> {userName} </div>
+            {/* 버튼 클릭 시 fetchUser() 함수를 불러오는 이벤트를 등록하세요. */}
             <button onClick={fetchUser}>다시 불러오기</button>
         </>
     );
