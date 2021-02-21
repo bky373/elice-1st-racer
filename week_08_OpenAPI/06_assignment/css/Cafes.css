@@ -1,0 +1,19 @@
+div {
+    margin: 20px;
+    padding: 10px 20px 30px;
+    border: solid 2px darkgrey;
+    border-radius: 5px;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  button {
+    margin-left: 10px;
+    padding: 5px 8px;
+    color: #1e1e1e;
+    font-weight: 600;
+    background-color: aliceblue;
+    border-radius: 8px;
+  }

@@ -1,0 +1,7 @@
+{
+    "data":[
+        {"id": 1, "item": "Caffe Americano", "description": "Type of coffee drink prepared by diluting an espresso with hot water, giving it a similar strength to, but different flavor from, traditionally brewed coffee", "price": 4100},
+        {"id": 2, "item": "Latte", "description": "A coffee drink made with espresso and steamed milk", "price": 4600},
+        {"id": 3, "item": "Latte macchiato", "description": "Prepared simply by frothing milk, generally producing generous foam, pouring it into a glass, and adding espresso.", "price": 5100}
+    ]
+}
