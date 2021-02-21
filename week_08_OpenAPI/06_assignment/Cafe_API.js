@@ -133,7 +133,7 @@ function Cafes() {
         resultMessage={createResultMessage}
       />
       <SearchMenu
-        queryID={queryId}
+        queryId={queryId}
         searchedMenu={searchedMenu}
         onChange={onChange}
         onSearch={onSearch}
