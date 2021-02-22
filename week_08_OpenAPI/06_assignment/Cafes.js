@@ -79,16 +79,16 @@ function Cafes() {
 
   const findMenuById = id => privateMenuList.find(menu => menu.id === id);
 
-  async function onCreate() {
+  const onCreate = () => {
     if (findMenuById(id) !== undefined || id === "") {
       onCreateError();
     } else {
       try {
         const menu = { id, item, description, price };
-        const response = await axios.post(apiUrl, menu);
+        axios.post(apiUrl, menu);
         dispatch({
           type: "CREATE_SUCCESS",
-          menu: response.data,
+          menu,
           message: "등록 성공!!"
         });
       } catch (e) {
