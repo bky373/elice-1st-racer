@@ -21,8 +21,7 @@ class Users extends React.Component {
         // axios.get()으로 GET 요청을 하세요. 단, await를 이용해 비동기 처리가 될 수 있도록 하세요.
         const response = await axios.get('https://jsonplaceholder.typicode.com/users')
         // setState를 이용해 데이터를 users에 저장하세요.
-            .then(response => this.setState({users : response.data}))
-        
+        this.setState({users : response.data});
     }
 
     render() {
@@ -41,3 +40,4 @@ class Users extends React.Component {
 }
 
 export default Users;
+
