@@ -1,11 +1,16 @@
-## 🐇 엘리스 트랙 1기 과정 🐇
+# 🐇 엘리스 트랙 1기 과정 🐇
 
-- **Elice** &nbsp; X &nbsp; **K-Digital-Training**
-- **관련**: &nbsp;&nbsp; 🐇[Elice](https://elice.io/) &nbsp; 📖 [과정 소개](https://elicetrack.oopy.io/) 
+## Intro
+
+**웹 프로그래밍**, **데이터 분석**,  **AI 서비스** 교육 내용을 정리한 레포입니다. <br>아래 **일정표**에서 엘리스에서 배운 내용이 무엇인지, 실습해본 코드가 무엇인지 확인할 수 있습니다. <br>더불어, **팀스터디**로 진행한 내용과 **개인적으로 학습**한 내용들도 확인할 수 있습니다.   
+
+> **Elice** &nbsp; X &nbsp; **K-Digital-Training**
+>
+> **관련**: &nbsp;&nbsp; 🐇[Elice](https://elice.io/) &nbsp; 📖 [과정 소개](https://elicetrack.oopy.io/) 
 
 <br/>
 
-### 일정
+### 일정표
 
 |               주차                | 학습 내용                                                    | 관련                                                         | 팀스터디                                                     |
 | :-------------------------------: | :----------------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------------- |
@@ -19,7 +24,7 @@
 | 설 연휴 힐링<br />(02.07 - 02.14) | 🚩 **자유 학습 과목**<br />- 디버깅<br />- 클린 코드<br />- 인공지능 미션 | **< 정리 >**<br />📚 [디버깅 학습 정리](https://github.com/bky373/elice-1st-racer/tree/master/week-else/Debugging)<br />📚 [클린 코드 학습 정리](https://github.com/bky373/elice-1st-racer/tree/master/week-else/Clean_Code)<br />📚 [인공지능 미션 학습 정리](https://github.com/bky373/elice-1st-racer/blob/master/week_else/AI_Mission/AI_Mission_01.md) |                                                              |
 |      8<br />(02.15 - 02.21)       | 🚩 **Open API 활용**<br />- Redux를 활용한 비동기 처리 <br />- 비동기 통신을 위한 Axios <br />- OpenAPI를 활용한 간단한 웹 서비스 제작 | **< 정리 >**<br />📚 [Redux 학습 정리](https://github.com/bky373/elice-1st-racer/blob/master/week_08_OpenAPI/README_Redux.md)<br />📚 [OpenAPI / Axios 학습 정리](https://github.com/bky373/elice-1st-racer/blob/master/week_08_OpenAPI/README_OpenAPI.md)<br />**< 과제 >**<br />[카페 API 만들기](https://github.com/bky373/elice-1st-racer/tree/master/week_08_OpenAPI/06_assignment) | [Team Study]()                                               |
 |    9 - 10<br />(02.22 - 03.07)    | 🚩 **웹 서비스 프로젝트**<br />- 도서관 책 대여 서비스 제작   | **< 프로젝트 >**<br />[엘리스 도서관](http://elice-kdt-ai-track-vm-racer-37.koreacentral.cloudapp.azure.com/books/)**<br />< 소개 및 코드 >**<br />[Read Me](https://github.com/bky373/elice_library) | **개인 프로젝트<br />(week 9 ~ 10)**                         |
-
+|        11 (03.08 - 03.14)         | 🚩 **자료구조와 알고리즘**<br />- Big O 시간 복잡도<br />- Array / Hash<br />- Linked List<br />- Stack / Queue<br />- Tree / 재귀 알고리즘 | **< 정리 >**<br />📚 [자료구조 & 알고리즘 학습 정리 I](https://github.com/bky373/elice-1st-racer/blob/master/week_11_DS_N_Algorithm/DS_Algorithm_01.md)<br />📚 [자료구조 & 알고리즘 학습 정리 II](https://github.com/bky373/elice-1st-racer/blob/master/week_11_DS_N_Algorithm/DS_Algorithm_02.md)<br>📚 [자료구조 & 알고리즘 학습 정리 III](https://github.com/bky373/elice-1st-racer/blob/master/week_11_DS_N_Algorithm/DS_Algorithm_03.md)<br>📚 [자료구조 & 알고리즘 학습 정리 IIII](https://github.com/bky373/elice-1st-racer/blob/master/week_11_DS_N_Algorithm/DS_Algorithm_04.md)<br />📚 [자료구조 & 알고리즘 학습 정리 IIIII](https://github.com/bky373/elice-1st-racer/blob/master/week_11_DS_N_Algorithm/DS_Algorithm_05.md)<br /><br />**< 실습 >**<br>[알고리즘 실습 종합](https://github.com/bky373/elice-1st-racer/tree/master/week_11_DS_N_Algorithm) | -                                                            |
 
 
 
